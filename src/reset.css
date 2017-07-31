@@ -1,0 +1,15 @@
+body,html {
+  font-family: "Helvetica-Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul,ol,li {
+ list-style: none;
+}
+
