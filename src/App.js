@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import HeaderBar from './components/HeaderBar'
-import SideBar from './components/SideBar'
-import MainPage from './components/MainPage'
+import HeaderBar from './components/container/HeaderBar'
+import SideBar from './components/container/SideBar'
+import MainPage from './components/container/MainPage'
 
 import './App.css'
 

@@ -1,6 +1,9 @@
-body,html {
+html {
   font-family: "Helvetica-Neue",Helvetica,Arial,sans-serif;
-  font-size: 12px;
+  box-sizing: border-box;
+}
+body {
+  font-size: .3265rem;
 }
 * {
   margin: 0;
@@ -11,5 +14,13 @@ a {
 }
 ul,ol,li {
  list-style: none;
+}
+.icon {
+  width: .3265rem;
+  height: .3265rem;
+  vertical-align: middle; 
+  fill: currentColor;
+  overflow: hidden;
+  color: #fff;
 }
 

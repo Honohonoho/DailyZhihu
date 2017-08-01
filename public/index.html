@@ -2,10 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>知乎日报</title>
+    <script type="text/javascript">
+      var scale = 1 / window.devicePixelRatio
+      var width = document.documentElement.clientWidth / window.devicePixelRatio//获取设备屏幕宽度
+      var css = '<style>html{font-size: ' + (width / 10 * window.devicePixelRatio) + 'px;}</style>'
+      var meta = '<meta name="viewport" content="initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no">'
+      document.write(meta)
+      document.write(css)
+    </script>  
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div> 
+    <script src="//at.alicdn.com/t/font_sfzga7pu3pyi7ldi.js"></script>
   </body>
 </html>
