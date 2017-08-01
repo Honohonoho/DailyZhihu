@@ -7,6 +7,12 @@ import MainPage from './MainPage'
 import './style/App.css'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      showSideBar: true
+    }
+  }
   render() {
     return (
       <div className="App">

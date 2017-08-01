@@ -30,7 +30,6 @@ class TodayNews extends Component {
     data.stories.map( item => {
       return stories.push(item)
     })
-    console.log(stories)
     this.setState({storiesList: stories})
   }
   getStoryId(id){
