@@ -16,8 +16,8 @@ ul,ol,li {
  list-style: none;
 }
 .icon {
-  width: .3265rem;
-  height: .3265rem;
+  width: .42857rem;
+  height: .42857rem;
   vertical-align: middle; 
   fill: currentColor;
   overflow: hidden;
