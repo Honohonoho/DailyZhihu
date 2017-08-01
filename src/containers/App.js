@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-import HeaderBar from './components/container/HeaderBar'
-import SideBar from './components/container/SideBar'
-import MainPage from './components/container/MainPage'
+import HeaderBar from './HeaderBar'
+import SideBar from './SideBar'
+import MainPage from './MainPage'
 
-import './App.css'
+import './style/App.css'
 
 class App extends Component {
   render() {

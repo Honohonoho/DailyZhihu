@@ -1,4 +1,3 @@
-
 @function rem($px) {
   $remSize: $px / 98;
   @return #{$remSize}rem;
@@ -6,7 +5,8 @@
 
 .header-bar {
   position: fixed;
-  height: rem(100);
+  top: 0;
+  height: rem(165);
   width: 100%;
   display: flex;
   justify-content: space-between;

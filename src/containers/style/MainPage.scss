@@ -1,0 +1,8 @@
+@function rem($px) {
+  $remSize: $px / 98;
+  @return #{$remSize}rem;
+}
+
+.main-page {
+  
+}

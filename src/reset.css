@@ -3,7 +3,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-size: .3265rem;
+  font-size: .5408rem;
 }
 * {
   margin: 0;
@@ -16,9 +16,9 @@ ul,ol,li {
  list-style: none;
 }
 .icon {
-  width: .42857rem;
-  height: .42857rem;
-  vertical-align: middle; 
+  width: .64285rem;
+  height: .64285rem;
+  vertical-align: top; 
   fill: currentColor;
   overflow: hidden;
   color: #fff;
