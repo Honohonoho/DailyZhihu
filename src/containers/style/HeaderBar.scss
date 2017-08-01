@@ -6,6 +6,7 @@
 .header-bar {
   position: fixed;
   top: 0;
+  z-index: 4;
   height: rem(165);
   width: 100%;
   display: flex;
@@ -13,13 +14,13 @@
   align-items: center;
   background: #00a2ea;
   .menu-icon{
-    margin: 0 rem(50) 0 rem(25);
+    margin: 0 rem(95) 0 rem(65);
   }
   .home-icon{
     color: #fff;
     flex-grow: 1;
   }
   .night-icon{
-    margin: 0 rem(5) 0 rem(50);
+    margin: 0 rem(45) 0 rem(75);
   }
 }

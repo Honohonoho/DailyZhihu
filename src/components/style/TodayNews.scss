@@ -5,6 +5,39 @@
 
 .main-page{
   .today-news{
-    
+    padding: rem(30) rem(20) 0 rem(20);
+    background: #f2f2f2;
+    >.title{
+      color: #76787e;
+      margin: 0 0 rem(40) rem(50);
+      font-size: rem(46);
+    }
+    .stories{
+      .story-item{
+        padding: rem(40) rem(50);
+        margin: rem(35) 0 0 0;
+        background: #fff;
+        border-radius: rem(16);
+        border: rem(1) solid #eaeaea;
+        border-bottom: rem(4) solid #d0d0d0;
+        >a{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .story-title{
+            margin-right: rem(45);
+            align-self: flex-start;
+            font-size: rem(50);
+            color: #2c3e50;
+          }
+          .story-pic{
+            img{
+              height: rem(220);
+              width: rem(240);
+            }
+          }
+        }
+      }
+    }
   }
 }

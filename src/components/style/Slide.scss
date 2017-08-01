@@ -6,6 +6,7 @@
 .main-page{
   .slide{
     position: relative;
+    z-index: 3;
     height: rem(762);
   }
 }

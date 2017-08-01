@@ -40,14 +40,16 @@ class TodayNews extends Component {
   render(){
     return(
       <div className="today-news">
-        <p>今日热闻</p>
+        <p className="title">今日热闻</p>
         <div className="stories">
           {this.state.storiesList.map( (item,index) => {
             return(
-              <div className="storyItem" key={index}>
-                <a to={this.getStoryId(item.id)}>
-                  <img src={item.images[0]} alt=""/>
-                  <p className="title">{item.title}</p>
+              <div className="story-item" key={index}>
+                <a href={this.getStoryId(item.id)}>
+                  <p className="story-title">{item.title}</p>
+                  <div className="story-pic">
+                    <img src={item.images[0]} alt=""/>
+                  </div>
                 </a>
               </div>
             )
