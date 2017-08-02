@@ -4,7 +4,7 @@ import HeaderBar from './HeaderBar'
 import SideBar from './SideBar'
 import MainPage from './MainPage'
 
-import './style/App.css'
+import './style/App.scss'
 
 class App extends Component {
   constructor(props){

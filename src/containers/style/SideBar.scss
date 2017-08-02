@@ -1,0 +1,102 @@
+@function rem($px) {
+  $remSize: $px / 98;
+  @return #{$remSize}rem;
+}
+
+.side-bar{
+  .side-bar-wrapper {
+    width: rem(960);
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    overflow: auto;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+    .side-bar-header{
+      padding: rem(50);
+      background: #00a2ea;
+      color: #fff;
+      .user{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: rem(80);
+        .avator{
+          margin-right: rem(50);
+          img{
+            border-radius: 50%;
+            width: rem(100);
+            height: rem(100);
+          }
+        }
+      }
+      .information{
+        padding-left: rem(80);
+        a{
+          color: #fff;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .icon{
+            padding: 0 rem(50);
+          }
+        }
+      }
+    }
+    .side-bar-list{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: rem(66);
+      .title{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .icon{
+          font-size: rem(66);
+          color: #00a2ea;
+          padding: 0 rem(50);
+        }
+        p{
+          font-size: rem(50);
+          height: rem(155);
+          line-height: rem(155);
+          color: #00a2ea;
+        }
+      }
+      .subs-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: rem(155);
+        width: 100%;
+        .item-name{
+          padding-left: rem(50);
+          flex-grow: 1;
+          color: #2c3e50;
+          font-size: rem(46);
+        }
+        .plus{
+          padding-right: rem(130);
+          color: #868686;
+          font-size: rem(82);
+        }
+      }
+    }
+  }
+  .side-bar-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 4;
+  }
+}

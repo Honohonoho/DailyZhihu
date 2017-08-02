@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import LocalUrl from '../components/LocalUrl'
 
+import './style/SideBar.scss'
+import Avator from './images/avator.jpg'
+
 class SideBar extends Component {
   constructor(props){
     super(props)
@@ -16,7 +19,6 @@ class SideBar extends Component {
         return resopnse.json()
       })
       .then( data => {
-        console.log(data)
         this.getSubscribedItem(data)
       })
       .catch( e => {
@@ -32,34 +34,46 @@ class SideBar extends Component {
     console.log(subsList)
     this.setState({subscribedList: subsList})
   }
+  renderSideBarItem(){
+    let sidebaritems = this.state.subscribedList.map( (item) => {
+      return(
+        <div className="subs-item" key={item.id}>
+          <p className="item-name">{item.name}</p>
+          <p className="plus">+</p>
+        </div>
+      )
+    })
+    return sidebaritems
+  }
   render(){
     return(
       <div className="side-bar">
-        <div className="side-bar-header">
-          <div className="user">
-            <div className="avator">
-              <img src="" alt=""/>
-            </div>
-            <div className="username">李祺</div>
-          </div>
-          <div className="information">
-            <a href="">
-              GitHub地址
-            </a>
-          </div>
-        </div>
-        <div className="side-bar-list">
-          <div className="title">
-            <p>首页</p>
-          </div>
-          {this.state.subscribedList.map( (item,index) => {
-            return(
-              <div className="subs-item">
-                <p className="item-name">{item.name}</p>
-                <p>+</p>
+        <div className="side-bar-wrapper">
+          <div className="side-bar-header">
+            <div className="user">
+              <div className="avator">
+                <img src={Avator} alt=""/>
               </div>
-            )
-          })}
+              <div className="username">李祺 (751718620@qq.com)</div>
+            </div>
+            <div className="information">
+              <a href="">
+                <svg className="icon" aria-hidden="true">
+                  <use xlinkHref="#icon-github"></use>
+                </svg>
+                GitHub地址
+              </a>
+            </div>
+          </div>
+          <div className="side-bar-list">
+            <div className="title">
+              <svg className="icon" aria-hidden="true">
+                <use xlinkHref="#icon-shouye"></use>
+              </svg>
+              <p>首页</p>
+            </div>
+            {this.renderSideBarItem()}
+          </div>
         </div>
         <div className="side-bar-mask"></div>
       </div>
