@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import { TransitionGroup } from 'react-transition-group'
 // import CSSTransition from 'react-transition-group/CSSTransition'
+import { createStore } from 'redux'
 
 import LocalUrl from '../components/LocalUrl'
 
