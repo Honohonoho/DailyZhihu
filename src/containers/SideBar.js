@@ -8,12 +8,31 @@ import LocalUrl from '../components/LocalUrl'
 import './style/SideBar.scss'
 import Avator from './images/avator.jpg'
 
+const action = {
+  type: 'SHOW_SIDEBAR',
+  visibility: false
+}
+const initialState = {
+  visibility: true
+}
+const reducer = (preState = initialState, action) => {
+  switch(action.type){
+    case 'SHOW_SIDEBAR':
+      return Object.assign({}, preState, {
+        visibility: action.visibility
+      })
+    default:
+      return preState
+  }
+}
+const store = createStore(reducer)
+
 class SideBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
       subscribedList: [],
-      show: true
+      visibility: this.getOwnState()
     }
   }
 
@@ -29,11 +48,19 @@ class SideBar extends Component {
       .catch(e => {
         console.log('Oops, error', e)
       })
-  }
 
-  handlerClick(){
-    this.setState({ show: !this.state.show })
-    console.log(this.state.show)
+    store.subscribe( ()=>{
+      this.setState({visibility: store.getState().visibility})
+    })
+  }
+  getOwnState(){
+    return store.getState().visibility
+  }
+  onChange(){
+    this.setState({visibility: this.getOwnState()})
+  }
+  handleClick(){
+    store.dispatch(action)
   }
   getSubscribedItem(data) {
     let subsList = []
@@ -54,11 +81,11 @@ class SideBar extends Component {
     })
     return sidebaritems
   }
-  
+
   render() {
     return (
       <div className="side-bar">
-        <div className={this.state.show ? 'side-bar-wrapper-show side-bar-wrapper' : 'side-bar-wrapper'}>
+        <div className={this.state.visibility ? 'side-bar-wrapper-show side-bar-wrapper' : 'side-bar-wrapper'}>
           <div className="side-bar-header">
             <div className="user">
               <div className="avator">
@@ -76,7 +103,7 @@ class SideBar extends Component {
             </div>
           </div>
           <div className="side-bar-list">
-            <div className="title">
+            <div className="title" onClick={ () => this.handleClick() }>
               <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-shouye"></use>
               </svg>
@@ -85,8 +112,8 @@ class SideBar extends Component {
             {this.renderSideBarItem()}
           </div>
         </div> 
-        <div className={this.state.show ? 'side-bar-mask side-bar-mask-show' : 'side-bar-mask'}
-          onClick={this.handlerClick.bind(this)}
+        <div className={this.state.visibility ? 'side-bar-mask side-bar-mask-show' : 'side-bar-mask'}
+          onClick={ () => this.handleClick() }
         >
         </div>
       </div>
