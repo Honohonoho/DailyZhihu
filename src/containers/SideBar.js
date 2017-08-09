@@ -13,7 +13,7 @@ const action = {
   visibility: false
 }
 const initialState = {
-  visibility: true
+  visibility: false
 }
 const reducer = (preState = initialState, action) => {
   switch(action.type){
@@ -67,7 +67,6 @@ class SideBar extends Component {
     data.others.map(item => {
       return subsList.push(item)
     })
-    console.log(subsList)
     this.setState({ subscribedList: subsList })
   }
   renderSideBarItem() {

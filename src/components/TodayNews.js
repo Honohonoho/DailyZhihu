@@ -23,7 +23,6 @@ class TodayNews extends Component {
       .catch( e => {
         console.log('Oops, error', e)
       })
-
   }
   getStoryItem(data){
     let stories = []
